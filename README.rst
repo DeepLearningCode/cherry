@@ -79,18 +79,18 @@ Custome
 
 cherry support Chinese and English by default, if you need to support other languages, you can refer **LAN_DICT** in **config.py**, each language accepts 3 parameters,
 
-    .. code-block:: python
+.. code-block:: python
 
-        LAN_DICT = {
-           'Chinese': {
-               'dir': False,
-               'type': '.dat',
-               'split': _jieba_cut},
-           'English': {
-               'dir': True,
-               'type': '.txt',
-               'split': _word_tokenize}
-        }
+    LAN_DICT = {
+       'Chinese': {
+           'dir': False,
+           'type': '.dat',
+           'split': _jieba_cut},
+       'English': {
+           'dir': True,
+           'type': '.txt',
+           'split': _word_tokenize}
+    }
 
 - dir
 
@@ -175,13 +175,13 @@ you can find auc.png in the directory
 
 .. math::
 
-    269 / (269 + 3) = 98.9%
+    1463 / (1463 + 26) = 98.3%
 
 - Recall
 
 .. math::
 
-    269 / (269 + 22)= 92.4%
+    1463 / (1463 + 5)= 99.7%
 
 Future
 --------
