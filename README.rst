@@ -29,13 +29,13 @@ cherry uses **Naive Bayes algorithm** for text classification (currently support
 Features
 -----------
 
-- Built-in cache. With built-in cache and numpy library for calculations. Text classify becomes extremely fast.
+- **Built-in cache**, With built-in cache and numpy library for calculations. Text classify becomes extremely fast.
 
-- High accuracy, the accuracy rate reaches 99% with 3000 spam/ham emails for training.
+- **High accuracy**, the accuracy rate reaches 99% with 3000 spam/ham emails for training.
 
-- Easy to customize, just put the data in different files/dir for training, you get a new classifier, custom word segmentation algorithm is also supported.
+- **Easy to customize**, just put the data in different files/dir for training, you get a new classifier, custom word segmentation algorithm is also supported.
 
-- Output confusion matrix, ROC curve and misclassified results.
+- **Easy to analysis**, output confusion matrix, ROC curve and misclassified results.
 
 Install
 --------
@@ -59,19 +59,19 @@ Make sure POSITIVE in config.py is set correctly, **POSITIVE means which categor
     >>> import cherry
     >>> result = cherry.classify(lan='English', text='hey ! the curtains look good - - i hope they do when they are hung - - lacy & i are planning to come next friday the 18 th . when ya\' ll go to the rodeo . i\' m taking a personal day from the bus and leaving early . thought i would bring them . answer & let me know if that\' s ok . if you need them before then i\' ll try to get them mailed . hope sweet cole is feeling better over his cold .  love you , mom')
 
-cherry.classify return a result object，result's percentage show the probabilities of different categories. we can see that cherry think this text has 95.2% will be **ham** and 4.8% will be **spam**.
+cherry.classify return a result object，result's percentage show the probabilities of different categories. we can see that cherry think this text has 98.1% will be **ham** and 1.9% will be **spam**.
 
 .. code-block:: bash
 
     >>> result.percentage
-    [('ham', 0.952), ('spam', 0.048)]
+    [('ham', 0.981), ('spam', 0.019)]
      
-result.word_list shows most informative words. In this example, **hope**, **mom**, **friday** has most weight on **ham** category.
+result.word_list shows most informative words. In this example, **mom**, **hope**, **friday** has most weight on **ham** category.
     
 .. code-block:: bash
 
     >>> result.word_list
-    [('hope', 2.4192041221621068), ('mom', 2.3142933958255458), ('friday', 2.162277188526919), ('bus', 2.1539507457503664), ('cole', 1.3698317869846957), ('early', 1.2016948651826951), ('let', 1.1051392327576126), ('th', 1.0989844377132734), ('hung', 1.0333595503634818), ('leaving', 1.0333595503634818), ('planning', 1.0108866945114237), ('know', 0.75549109936002612), ('thought', 0.75171979236766351), ...
+    [('mom', 2.7040267359471546), ('hope', 2.5896961619873533), ('friday', 2.2084685843119516), ('bus', 2.175959305746657), ('cole', 1.3918403469809846), ('early', 1.3430501828115533), ('th', 1.1363004412730202), ('let', 1.1213260781515704), ('hung', 1.0553681103597725), ('planning', 0.942572616214429), ('thought', 0.8943563401525694), ('leaving', 0.8810147232149959), ('rodeo', 0.8322245590455619), ('know', 0.7527820554594289), ('need', 0.7083388692206167), ('18', 0.5476529090081748)...
 
 
 Custome
@@ -100,6 +100,7 @@ cherry support Chinese and English by default, if you need to support other lang
 
         .
         ├── Chinese
+        │   ├── cache
         │   ├── data
         │   │   ├── gamble.dat
         │   │   ├── normal.dat
@@ -107,6 +108,7 @@ cherry support Chinese and English by default, if you need to support other lang
         │   │   └── sex.dat
         │   └── stop_word.dat
         └── English
+            ├── cache
             ├── data
             │   ├── ham
             │   │   ├── 0001.1999-12-10.farmer.ham.txt
@@ -126,9 +128,9 @@ cherry support Chinese and English by default, if you need to support other lang
 Testing
 ---------
 
-First, download `test_data`_ , and put them into the correct path.
+First, download `test_data`_ , create a 'data' dir inside the language dir. and put the language's data into 'data' dir.
   
-.. _`test_data`: https://drive.google.com/file/d/1vaIpXYAV5p_wN2OcZbgm9aIy0-JtINrt/view?usp=sharing
+.. _`test_data`: https://drive.google.com/file/d/1MXl_8p2zyFdAXQ8i9ePz4Qkh9MZ-mmy9/view?usp=sharing
   
 test_data contains 1500 spam emails and 1500 ham emails, after git clone the repo, run
 
@@ -301,7 +303,7 @@ result的word_list属性显示的是句子的有效部分（这里的有效部�
 
 由于测试数据包含敏感内容，如果用户想进行测试，可以通过Google dirve下载 `test_data`_ 然后放在对应语言文件夹。
   
-.. _`test_data`: https://drive.google.com/file/d/1vaIpXYAV5p_wN2OcZbgm9aIy0-JtINrt/view?usp=sharing
+.. _`test_data`: https://drive.google.com/file/d/1MXl_8p2zyFdAXQ8i9ePz4Qkh9MZ-mmy9/view?usp=sharing
   
 git clone仓库之后运行
 

@@ -21,7 +21,7 @@ args = parser.parse_args()
 
 
 def main():
-    print('This may takes some time, Go get a coffee :D.')
+    print('This may take 5 minutes, Go get a coffee :D.')
     a = cherry.analysis(
         lan=args.language, test_time=args.test_time,
         test_num=args.num, debug=args.debug, positive=args.positive)
