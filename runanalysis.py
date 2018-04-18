@@ -13,10 +13,10 @@ parser.add_argument(
     help='How many test data we need every time')
 parser.add_argument(
     '-p', dest='positive', const=True, action='store_const',
-    help='Show ROC curve or not')
+    help='Draw ROC curve or not')
 parser.add_argument(
     '-d', dest='debug', const=True, action='store_const',
-    help='Show wrong classified data')
+    help='Show wrong classified data when testing')
 args = parser.parse_args()
 
 

@@ -28,7 +28,8 @@ def _word_tokenize(text, stop_word):
         and t not in stop_word]
 
 
-POSITIVE = 'normal.dat'
+# POSITIVE = 'normal.dat'
+POSITIVE = 'spam'
 
 LAN_DICT = {
     'Chinese': {
