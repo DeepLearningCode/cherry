@@ -128,7 +128,7 @@ cherry support Chinese and English by default, if you need to support other lang
 Testing
 ---------
 
-First, download `test_data`_ , create a 'data' dir inside the language dir. and put the language's data into 'data' dir.
+After install cherry, download `test_data`_ , create a 'data' dir inside the language dir. and put the language's data into 'data' dir.
   
 .. _`test_data`: https://drive.google.com/file/d/1MXl_8p2zyFdAXQ8i9ePz4Qkh9MZ-mmy9/view?usp=sharing
   
