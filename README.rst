@@ -125,6 +125,16 @@ cherry support Chinese and English by default, if you need to support other lang
 
   + text segmentation function，should return a list contains every valid word.
 
+Training
+---------
+If you use your own data, you have to train the data like this:
+
+.. code-block:: bash
+
+  >>> import cherry
+  >>> cherry.train(lan='English')
+
+
 Testing
 ---------
 
@@ -297,6 +307,16 @@ result的word_list属性显示的是句子的有效部分（这里的有效部�
 - split
 
   + 分词函数，需要返回一个列表，包含分词后的每个词语，并添加在config文件中。
+
+训练
+-------
+如果使用你自己的定制数据的话，需要重新训练模型：
+
+.. code-block:: bash
+
+  >>> import cherry
+  >>> cherry.train()
+
 
 测试
 -------
