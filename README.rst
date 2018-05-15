@@ -13,7 +13,7 @@ cherry
     :target: https://pypi.python.org/pypi/cherry
 
 
-:Version: 0.4.0
+:Version: 0.4.2
 :Download: https://pypi.python.org/pypi/cherry/
 :Source: https://github.com/Sunkist-Cherry/cherry
 :Support: >=Python3.3
