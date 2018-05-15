@@ -71,7 +71,7 @@ class Result:
 
     def _bayes_classify(self):
         '''
-        Calculate the probability of different category
+        Calculate the probabilities of different categories
         '''
         possibility_vector = []
         log_list = []
@@ -79,7 +79,7 @@ class Result:
         for i in self._ps_vector:
             # final_vector: [0, -7.3, 0, 0, -8, ...]
             final_vector = i[0] * self.word_vec
-            # Get most distance non zero word list
+            # Get logest distance non zero word list
             # non_zero_vector: [-7.3, -8]
             non_zero_vector = final_vector[np.array(self.word_index)]
             possibility_vector.append(non_zero_vector)

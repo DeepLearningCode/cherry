@@ -24,7 +24,7 @@ def _jieba_cut(text, stop_word):
 
 def _word_tokenize(text, stop_word):
     return [
-        t for t in word_tokenize(text) if len(t) > 1
+        t.lower() for t in word_tokenize(text) if len(t) > 1
         and t not in stop_word]
 
 
