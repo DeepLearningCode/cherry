@@ -24,3 +24,7 @@ class TestDataNumError(CherryIOException, IndexError):
 
 class CacheNotFoundError(CherryIOException, IOError):
     '''Cache files not found'''
+
+
+class TextNotFoundError(CherryIOException, IndexError):
+    '''Text not in train data'''

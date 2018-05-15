@@ -15,7 +15,7 @@ from operator import itemgetter
 import numpy as np
 from .config import DATA_DIR
 from .tokenizer import Token
-from .exceptions import CacheNotFoundError
+from .exceptions import CacheNotFoundError, TextNotFoundError
 
 
 class Result:
@@ -68,6 +68,9 @@ class Result:
                     self.non_zero_word.append(i)
                     self.word_index.append(self._vocab_dict[i])
                 self.word_vec[self._vocab_dict[i]] += 1
+        if not self.word_index:
+            error = ('Tokens in text do not in train data')
+            raise TextNotFoundError(error)
 
     def _bayes_classify(self):
         '''
